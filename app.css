@@ -1,0 +1,13 @@
+﻿body {
+    text-align: center;
+    color: #10beff;
+    font-family: "Comic Sans MS";
+}
+
+a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+}
