@@ -1,5 +1,9 @@
-# angular2-registration-login-example
+# socialapp-frontend
 
-Angular 2/5 User Registration and Login Example & Tutorial
+Whole application is in development, more sophisticated readme will be provided sooner or later.
 
-To see a demo and further details go to http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial
+#### To run this app:
+* Clone code
+* Install npm
+* npm install
+* npm start
