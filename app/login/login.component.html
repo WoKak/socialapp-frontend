@@ -1,5 +1,5 @@
 ﻿<div>
-    <h2>Login</h2>
+    <h2>socialapp</h2>
     <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
         <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
             <input type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required placeholder="username"/>

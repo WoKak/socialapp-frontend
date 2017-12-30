@@ -6,6 +6,8 @@
 
 a {
     cursor: pointer;
+    text-decoration: none;
+    color: #10beff;
 }
 
 .help-block {
