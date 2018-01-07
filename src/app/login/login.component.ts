@@ -20,6 +20,12 @@ export   class   AppLogin  {
 
   login() {
 
+    this.authenticationService.login(this.model.username, this.model.password).subscribe(
+      data => {
+          console.log(data);
+          alert('OK!');
+      }
+    );
     this.router.navigate(['/main']);
     //
     // Call with credentials to authentication service - if ok redirect to main page

@@ -8,10 +8,11 @@ import {routing} from './app.routing';
 import {AuthGuard} from './guard/auth.guard';
 import {AuthenticationService} from './services/authentication.service';
 import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule ({
-  imports: [ BrowserModule, routing, FormsModule],
+  imports: [ BrowserModule, routing, FormsModule, HttpModule],
   declarations: [ AppComponent, AppMainpage, AppProfile, AppLogin],
   providers: [ AuthGuard, AuthenticationService ],
   bootstrap: [ AppComponent ]
