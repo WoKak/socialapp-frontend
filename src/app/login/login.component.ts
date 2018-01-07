@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../services/index';
+import {User} from '../model/user';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 @Component ({
   moduleId: module.id,
@@ -9,9 +14,19 @@ import {Router} from '@angular/router';
 
 export   class   AppLogin  {
 
-  constructor(private router: Router) {}
+  model: any = {};
+
+  constructor(private router: Router, private authenticationService: AuthenticationService) {}
 
   login() {
-    this.router.navigateByUrl('/profile');
+
+    this.router.navigate(['/main']);
+    //
+    // Call with credentials to authentication service - if ok redirect to main page
+    // this.authenticationService.login(this.model.username, this.model.password).subscribe(
+    //     user => {
+    //       this.router.navigate(['/main']);
+    //     }
+    // );
   }
 }
