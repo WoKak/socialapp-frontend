@@ -8,13 +8,13 @@ import {routing} from './app.routing';
 import {AuthGuard} from './guard/auth.guard';
 import {AuthenticationService} from './services/authentication.service';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule ({
-  imports: [ BrowserModule, routing, FormsModule, HttpModule],
+  imports: [ BrowserModule, routing, FormsModule, HttpClientModule],
   declarations: [ AppComponent, AppMainpage, AppProfile, AppLogin],
-  providers: [ AuthGuard, AuthenticationService ],
+  providers: [ AuthGuard, AuthenticationService, HttpClient ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

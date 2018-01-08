@@ -21,10 +21,7 @@ export   class   AppLogin  {
   login() {
 
     this.authenticationService.login(this.model.username, this.model.password).subscribe(
-      data => {
-          console.log(data);
-          alert('OK!');
-      }
+      data => {}
     );
     this.router.navigate(['/main']);
     //
