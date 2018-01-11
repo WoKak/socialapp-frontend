@@ -14,7 +14,7 @@ export class AuthenticationService {
 
     let httpHeaders = new HttpHeaders().set('Access-Control-Allow-Origin', 'http://localhost:3000').set('Token', '');
     // here should be some authentication request to backend
-    return this.http.get('http://localhost:8080/app/hello', {headers: httpHeaders}).map(
+    return this.http.get('https://localhost:8443/app/hello', {headers: httpHeaders}).map(
       data => {
         console.log(data); // need some improvement with logging
       }
