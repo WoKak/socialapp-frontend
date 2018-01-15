@@ -9,7 +9,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: AppProfile },
   { path: 'login', component: AppLogin},
 
-  { path: '**', redirectTo: 'main' }
+  { path: '**', redirectTo: 'login' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
