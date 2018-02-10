@@ -15,3 +15,7 @@ then you can start application with:
 ```
 npm start
 ```
+
+##### Important note:
+
+Source of the duck image: https://www.behance.net/gallery/42094811/Sticker-of-BDuck

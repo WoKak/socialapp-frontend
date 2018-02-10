@@ -45,3 +45,11 @@ a:hover {
 #cntn_lnk {
   color: #10beff;
 }
+
+#lgt_lgn_btn {
+  color: #10beff;
+}
+
+#lgt_lgn_btn:hover {
+  color: #369;
+}

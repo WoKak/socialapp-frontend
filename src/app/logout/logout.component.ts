@@ -5,9 +5,9 @@ import {AuthenticationService} from "../services/authentication.service";
 @Component ({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: './mainpage.component.html'
+  templateUrl: './logout.component.html'
 })
-export   class   AppMainpage  {
+export   class   AppLogout  {
 
   constructor(private http: HttpClient, private authService: AuthenticationService) {}
 
