@@ -10,7 +10,6 @@ import {AuthenticationService} from './services/authentication.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
-
 @NgModule ({
   imports: [ BrowserModule, routing, FormsModule, HttpClientModule],
   declarations: [ AppComponent, AppMainpage, AppProfile, AppLogin],

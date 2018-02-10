@@ -22,17 +22,11 @@ export   class   AppLogin  {
     this.authenticationService.login(this.model.username, this.model.password).subscribe(
       data => {
         this.token = data;
+
+        if (this.token !== '') {
+          this.router.navigate(['/main']);
+        }
       }
     );
-    //
-    if(this.token.length != 0)
-      this.router.navigate(['/main']);
-    //
-    // Call with credentials to authentication service - if ok redirect to main page
-    // this.authenticationService.login(this.model.username, this.model.password).subscribe(
-    //     user => {
-    //       this.router.navigate(['/main']);
-    //     }
-    // );
   }
 }
