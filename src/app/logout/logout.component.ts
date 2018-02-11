@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {AuthenticationService} from "../services/authentication.service";
+
 
 @Component ({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './logout.component.html'
 })
-export   class   AppLogout  {
+export class AppLogout  {
 
-  constructor(private http: HttpClient, private authService: AuthenticationService) {}
+  constructor (private authService: AuthenticationService) {
 
-  main() {
-    this.authService.main().subscribe(
+    this.authService.logout().subscribe(
       data => {
-        console.log(data);
+        console.log("Logout successful");
       }
     );
   }
