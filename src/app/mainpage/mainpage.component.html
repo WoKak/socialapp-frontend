@@ -5,4 +5,7 @@
   <li (click)="logout()"><a [routerLink] = "['/logout']">Logout</a></li>
 </ul>
 <br/>
-<p (click)="main()">Main page</p>
+<div class="tweet" *ngFor="let tweet of tweets">
+  <p class="owner">{{tweet.owner}}:</p>
+  <p class="twt_txt">{{tweet.tweet}}</p>
+</div>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {AuthenticationService} from "../services/authentication.service";
 
 @Component ({
@@ -9,12 +8,17 @@ import {AuthenticationService} from "../services/authentication.service";
 })
 export   class   AppMainpage  {
 
-  constructor(private http: HttpClient, private authService: AuthenticationService) {}
+  public tweets: any;
 
-  main() {
-    this.authService.main().subscribe(
+  constructor(private authService: AuthenticationService) {
+    this.fetch()
+  }
+
+  fetch() {
+    this.authService.fetchAllTweets().subscribe(
       data => {
-        console.log(data);
+        console.log('Tweets fetched');
+        this.tweets = data;
       }
     );
   }
