@@ -61,6 +61,22 @@ export class AuthenticationService {
     )
   }
 
+  register(username: string, password: string) {
+
+    let httpHeaders = new HttpHeaders().set('Access-Control-Allow-Origin', 'http://localhost:3000').set('Token', '');
+
+    return this.http.post(
+      'http://localhost:8443/auth/register',
+      {username: username, password: password},
+      {headers: httpHeaders}
+    )
+      .map(
+        data => {
+          return username;
+        }
+      );
+  }
+
   isAuthenticated() {
     if (this.token.length != 0) {
       return true;

@@ -17,6 +17,19 @@ body {
   color: #336699;
 }
 
+#rgt_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#rgt_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
 ul {
   display: inline;
   border: 5px #369 solid;
@@ -51,5 +64,13 @@ a:hover {
 }
 
 #lgt_lgn_btn:hover {
+  color: #369;
+}
+
+#rgt_lnk {
+  color: #10beff;
+}
+
+#rgt_lnk:hover {
   color: #369;
 }
