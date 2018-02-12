@@ -31,15 +31,15 @@ export class AuthenticationService {
       );
   }
 
-  main() {
+  fetchAllTweets() {
     let httpHeaders = new HttpHeaders()
       .set('Access-Control-Allow-Origin', 'http://localhost:3000')
       .set('Token', this.token);
 
-    return this.http.get('http://localhost:8443/main/message', {headers: httpHeaders}).map(
+    return this.http.get('http://localhost:8443/main/fetch-tweets', {headers: httpHeaders}).map(
     data => {
       const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-      return response.tweet;
+      return response;
     }
     )
   }

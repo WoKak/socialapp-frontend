@@ -74,3 +74,20 @@ a:hover {
 #rgt_lnk:hover {
   color: #369;
 }
+
+.tweet {
+  border: solid 1px #369;
+  border-radius: 20px;
+  width: 300px;
+  height: 170px;
+  text-align: justify;
+  margin: 10px auto 10px auto;
+  padding: 5px;
+  font-family: monospace;
+  color: black;
+}
+
+.owner {
+  color: #369;
+  text-align: left;
+}
