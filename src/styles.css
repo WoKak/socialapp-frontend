@@ -30,6 +30,19 @@ body {
   color: #336699;
 }
 
+#twt_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#twt_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
 ul {
   display: inline;
   border: 5px #369 solid;
@@ -90,4 +103,9 @@ a:hover {
 .owner {
   color: #369;
   text-align: left;
+}
+
+#new {
+  alignment: left;
+  border: none;
 }
