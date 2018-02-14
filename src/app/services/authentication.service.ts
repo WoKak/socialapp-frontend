@@ -14,7 +14,9 @@ export class AuthenticationService {
 
   login(username: string, password: string) {
 
-    let httpHeaders = new HttpHeaders().set('Access-Control-Allow-Origin', 'http://localhost:3000').set('Token', '');
+    let httpHeaders = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', 'http://localhost:3000')
+      .set('Token', '');
 
     return this.http.post(
       'http://localhost:8443/auth/login',
@@ -31,6 +33,25 @@ export class AuthenticationService {
       );
   }
 
+  tweet(tweet: string) {
+
+    let httpHeaders = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', 'http://localhost:3000')
+      .set('Token', this.token);
+
+    return this.http.post(
+      'http://localhost:8443/profile/tweet',
+      {owner: this.currentuser, tweet: tweet},
+      {headers: httpHeaders}
+    )
+      .map(
+        data => {
+          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+          return response.owner;
+        }
+      );
+  }
+
   fetchAllTweets() {
     let httpHeaders = new HttpHeaders()
       .set('Access-Control-Allow-Origin', 'http://localhost:3000')
@@ -41,6 +62,19 @@ export class AuthenticationService {
       const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
       return response;
     }
+    )
+  }
+
+  fetchAllUsersTweets() {
+    let httpHeaders = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', 'http://localhost:3000')
+      .set('Token', this.token);
+
+    return this.http.get('http://localhost:8443/profile/fetch-users-tweets/' + this.currentuser, {headers: httpHeaders}).map(
+      data => {
+        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+        return response;
+      }
     )
   }
 
