@@ -17,6 +17,32 @@ body {
   color: #336699;
 }
 
+#rgt_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#rgt_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+#twt_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#twt_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
 ul {
   display: inline;
   border: 5px #369 solid;
@@ -52,4 +78,34 @@ a:hover {
 
 #lgt_lgn_btn:hover {
   color: #369;
+}
+
+#rgt_lnk {
+  color: #10beff;
+}
+
+#rgt_lnk:hover {
+  color: #369;
+}
+
+.tweet {
+  border: solid 1px #369;
+  border-radius: 20px;
+  width: 300px;
+  height: 170px;
+  text-align: justify;
+  margin: 10px auto 10px auto;
+  padding: 5px;
+  font-family: monospace;
+  color: black;
+}
+
+.owner {
+  color: #369;
+  text-align: left;
+}
+
+#new {
+  alignment: left;
+  border: none;
 }

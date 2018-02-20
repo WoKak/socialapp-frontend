@@ -5,10 +5,7 @@ Whole application is in development, more sophisticated readme will be provided 
 #### To run this app:
 1) Clone code
 2) Install npm
-3) 
-```
-npm install
-```
+3) ```npm install```
 
 then you can start application with:
 
