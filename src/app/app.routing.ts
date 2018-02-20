@@ -1,10 +1,11 @@
 import {AppProfile} from './profile/profile.component';
 import {AppMainpage} from './mainpage/mainpage.component';
-import {AppLogin} from './login/login.component';
 import {Routes, RouterModule} from "@angular/router";
 import {AuthGuard} from "./guard/auth.guard";
 import {AppLogout} from "./logout/logout.component";
 import {AppRegistration} from "./registration/registration.component";
+import {AppSettings} from "./settings/settings.component";
+import {AppLogin} from "./login/login.component";
 
 const appRoutes: Routes = [
   { path: 'main', component: AppMainpage, canActivate: [AuthGuard]},
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'login', component: AppLogin},
   { path: 'logout', component: AppLogout},
   { path: 'registration', component: AppRegistration},
+  { path: 'settings', component: AppSettings, canActivate: [AuthGuard]},
 
   { path: '**', redirectTo: 'login' }
 ];
