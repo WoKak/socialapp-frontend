@@ -11,11 +11,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppLogout} from "./logout/logout.component";
 import {AppRegistration} from "./registration/registration.component";
 import {AppLogin} from "./login/login.component";
-import {AppSettings} from "./settings/settings.component";
+import {AppFriends} from "./friends/friends.component";
 
 @NgModule ({
   imports: [ BrowserModule, routing, FormsModule, HttpClientModule],
-  declarations: [ AppComponent, AppMainpage, AppProfile, AppLogin, AppLogout, AppRegistration, AppSettings],
+  declarations: [ AppComponent, AppMainpage, AppProfile, AppLogin, AppLogout, AppRegistration, AppFriends],
   providers: [ AuthGuard, AuthenticationService, HttpClient ],
   bootstrap: [ AppComponent ]
 })

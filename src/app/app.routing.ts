@@ -4,7 +4,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {AuthGuard} from "./guard/auth.guard";
 import {AppLogout} from "./logout/logout.component";
 import {AppRegistration} from "./registration/registration.component";
-import {AppSettings} from "./settings/settings.component";
+import {AppFriends} from "./friends/friends.component";
 import {AppLogin} from "./login/login.component";
 
 const appRoutes: Routes = [
@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   { path: 'login', component: AppLogin},
   { path: 'logout', component: AppLogout},
   { path: 'registration', component: AppRegistration},
-  { path: 'settings', component: AppSettings, canActivate: [AuthGuard]},
+  { path: 'friends', component: AppFriends, canActivate: [AuthGuard]},
 
   { path: '**', redirectTo: 'login' }
 ];

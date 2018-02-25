@@ -4,10 +4,10 @@ import {AuthenticationService} from "../services/authentication.service";
 @Component ({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: './settings.component.html'
+  templateUrl: './friends.component.html'
 })
 
-export   class   AppSettings  {
+export   class   AppFriends  {
 
   private model: any;
 
