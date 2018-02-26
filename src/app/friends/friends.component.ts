@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AuthenticationService} from "../services/authentication.service";
+import {Router} from "@angular/router";
 
 @Component ({
   moduleId: module.id,
@@ -9,13 +10,25 @@ import {AuthenticationService} from "../services/authentication.service";
 
 export   class   AppFriends  {
 
-  private model: any;
+  private model: any = {};
+  public friends: any;
 
-  constructor() {}
+  constructor(private authService: AuthenticationService, private router: Router) {this.fetchFriends();}
 
-  change() {
+  addFriend() {
+    this.authService.addFriend(this.model.new).subscribe(
+      data => {
+        console.log('Friend added')
+      }
+    );
   }
 
-  fetch() {
+  fetchFriends() {
+    this.authService.fetchFriends().subscribe(
+      data => {
+        console.log('Users friends fetched');
+        this.friends = data;
+      }
+    );
   }
 }

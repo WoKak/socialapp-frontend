@@ -44,12 +44,12 @@ export class AuthenticationService {
       {owner: this.currentuser, tweet: tweet},
       {headers: httpHeaders}
     )
-      .map(
-        data => {
-          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-          return response.owner;
-        }
-      );
+    .map(
+      data => {
+        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+        return response.owner;
+      }
+     );
   }
 
   fetchAllTweets() {
@@ -57,7 +57,7 @@ export class AuthenticationService {
       .set('Access-Control-Allow-Origin', 'http://localhost:3000')
       .set('Token', this.token);
 
-    return this.http.get('http://localhost:8443/main/fetch-tweets', {headers: httpHeaders}).map(
+    return this.http.get('http://localhost:8443/main/fetch-tweets/' + this.currentuser, {headers: httpHeaders}).map(
     data => {
       const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
       return response;
@@ -143,5 +143,34 @@ export class AuthenticationService {
         return response;
       }
     )
+  }
+
+  fetchFriends() {
+    let httpHeaders = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', 'http://localhost:3000')
+      .set('Token', this.token);
+    return this.http.get('http://localhost:8443/friends/fetch-friends/' + this.currentuser, {headers: httpHeaders}).map(
+      data => {
+        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+        return response;
+      }
+    )
+  }
+
+  addFriend(friendname: String) {
+    let httpHeaders = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', 'http://localhost:3000')
+      .set('Token', this.token);
+
+    return this.http.get(
+      'http://localhost:8443/friends/add-friend/' + this.currentuser + "/" + friendname,
+      {headers: httpHeaders}
+    )
+      .map(
+        data => {
+          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+          return response.owner;
+        }
+      );
   }
 }
