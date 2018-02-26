@@ -43,6 +43,32 @@ body {
   color: #336699;
 }
 
+#add_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#add_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+#sttg_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#sttg_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
 ul {
   display: inline;
   border: 5px #369 solid;
@@ -108,4 +134,8 @@ a:hover {
 #new {
   alignment: left;
   border: none;
+}
+
+#banner:hover {
+  color: #369;
 }

@@ -1,9 +1,12 @@
 <ul id="lst">
   <li><a [routerLink] = "['/main']">Main page</a></li>
   <li><a [routerLink] = "['/profile']">My profile</a></li>
+  <li><a [routerLink] = "['/friends']">Friends</a></li>
   <li><a>|</a></li>
   <li (click)="logout()"><a [routerLink] = "['/logout']">Logout</a></li>
 </ul>
+<br>
+  <p (click)="changeSettings()" id="banner">{{banner}}</p>
 <br/>
 <div class="tweet">
   <form>

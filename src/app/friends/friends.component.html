@@ -5,8 +5,10 @@
   <li><a>|</a></li>
   <li (click)="logout()"><a [routerLink] = "['/logout']">Logout</a></li>
 </ul>
-<br/>
-<div class="tweet" *ngFor="let tweet of tweets">
-  <p class="owner">{{tweet.owner}}:</p>
-  <p class="twt_txt">{{tweet.tweet}}</p>
-</div>
+<p>Yours friends:</p>
+<p *ngFor="let friend of friends">{{friend}}</p>
+<form>
+  <input type="text" placeholder="type new friend's name" [(ngModel)]="model.new" name="new" id="new"/>
+  <br/>
+  <input type="submit" value="add" id="add_btn" (click)="addFriend()"/>
+</form>
