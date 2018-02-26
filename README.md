@@ -1,6 +1,15 @@
 # socialapp-frontend
 
-Whole application is in development, more sophisticated readme will be provided sooner or later.
+Frontend of socialapp - application with filtering offensive post feature realized by
+separate application with neural network.
+
+#### Technology stack:
+
+* TypeScript 2.1.6
+* Angular 4
+* HTML
+* CSS
+* npm
 
 #### To run this app:
 1) Clone code
