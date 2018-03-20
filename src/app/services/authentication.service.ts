@@ -10,7 +10,8 @@ export class AuthenticationService {
   currentuser: string;
   token: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   login(username: string, password: string) {
 
@@ -22,14 +23,14 @@ export class AuthenticationService {
       'http://localhost:8443/auth/login',
       {username: username, password: password},
       {headers: httpHeaders}
-      )
+    )
       .map(
-      data => {
-        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-        this.currentuser = response.username;
-        this.token = response.token;
-        return response.token;
-      }
+        data => {
+          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+          this.currentuser = response.username;
+          this.token = response.token;
+          return response.token;
+        }
       );
   }
 
@@ -44,12 +45,12 @@ export class AuthenticationService {
       {owner: this.currentuser, tweet: tweet},
       {headers: httpHeaders}
     )
-    .map(
-      data => {
-        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-        return response.owner;
-      }
-     );
+      .map(
+        data => {
+          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+          return response.owner;
+        }
+      );
   }
 
   fetchAllTweets() {
@@ -58,10 +59,10 @@ export class AuthenticationService {
       .set('Token', this.token);
 
     return this.http.get('http://localhost:8443/main/fetch-tweets/' + this.currentuser, {headers: httpHeaders}).map(
-    data => {
-      const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-      return response;
-    }
+      data => {
+        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+        return response;
+      }
     )
   }
 
@@ -164,6 +165,23 @@ export class AuthenticationService {
 
     return this.http.get(
       'http://localhost:8443/friends/add-friend/' + this.currentuser + "/" + friendname,
+      {headers: httpHeaders}
+    )
+      .map(
+        data => {
+          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+          return response.owner;
+        }
+      );
+  }
+
+  removeFriend(friend: any) {
+    let httpHeaders = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', 'http://localhost:3000')
+      .set('Token', this.token);
+
+    return this.http.get(
+      'http://localhost:8443/friends/remove-friend/' + this.currentuser + "/" + friend,
       {headers: httpHeaders}
     )
       .map(

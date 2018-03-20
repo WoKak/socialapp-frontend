@@ -1,28 +1,31 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthenticationService} from "../services/authentication.service";
 import {Router} from "@angular/router";
 
-@Component ({
+@Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './profile.component.html'
 })
 
-export   class   AppProfile  {
+export class AppProfile {
 
   public tweets: any;
   public banner: any;
   model: any = {};
 
-  constructor (private authService: AuthenticationService, private router: Router) {this.authService.fetchUsersSettings().subscribe(
-    data => {
-      if(data > 0) {
-        this.banner = "You are not watching offensive tweets, click here to change it."
-      } else {
-        this.banner = "You are watching offensive tweets, click here to change it."
+  constructor(private authService: AuthenticationService, private router: Router) {
+    this.authService.fetchUsersSettings().subscribe(
+      data => {
+        if (data > 0) {
+          this.banner = "You are not watching offensive tweets, click here to change it."
+        } else {
+          this.banner = "You are watching offensive tweets, click here to change it."
+        }
       }
-    }
-  );}
+    );
+    this.fetchMyTweets();
+  }
 
   tweet() {
     this.authService.tweet(this.model.new).subscribe(
@@ -30,6 +33,7 @@ export   class   AppProfile  {
         console.log("Tweet has been added");
       }
     );
+    this.router.navigate(['/main']);
   }
 
   fetchMyTweets() {

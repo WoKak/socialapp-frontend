@@ -21,6 +21,7 @@ export   class   AppFriends  {
         console.log('Friend added')
       }
     );
+    this.router.navigate(['/main']);
   }
 
   fetchFriends() {
@@ -30,5 +31,14 @@ export   class   AppFriends  {
         this.friends = data;
       }
     );
+  }
+
+  removeFriend(friend: any) {
+    this.authService.removeFriend(friend).subscribe(
+      data => {
+        console.log('Friend has been removed');
+      }
+    );
+    this.router.navigate(['/main']);
   }
 }

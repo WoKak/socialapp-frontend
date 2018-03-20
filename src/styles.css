@@ -131,6 +131,10 @@ a:hover {
   text-align: left;
 }
 
+.friends:hover {
+  color: #10beff;
+}
+
 #new {
   alignment: left;
   border: none;

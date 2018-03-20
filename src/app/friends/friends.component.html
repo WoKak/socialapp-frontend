@@ -6,7 +6,7 @@
   <li (click)="logout()"><a [routerLink] = "['/logout']">Logout</a></li>
 </ul>
 <p>Yours friends:</p>
-<p *ngFor="let friend of friends">{{friend}}</p>
+<p *ngFor="let friend of friends" (click)="removeFriend(friend)" class="friends">{{friend}}</p>
 <form>
   <input type="text" placeholder="type new friend's name" [(ngModel)]="model.new" name="new" id="new"/>
   <br/>
