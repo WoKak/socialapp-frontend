@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AuthenticationService} from "../services/authentication.service";
+import {Router} from "@angular/router";
 
 @Component ({
   moduleId: module.id,
@@ -10,7 +11,7 @@ export   class   AppMainpage  {
 
   public tweets: any;
 
-  constructor(private authService: AuthenticationService) {
+  constructor(private authService: AuthenticationService, private router: Router) {
     this.fetch()
   }
 
@@ -21,5 +22,14 @@ export   class   AppMainpage  {
         this.tweets = data;
       }
     );
+  }
+
+  flagTweet(id: any) {
+    this.authService.flagTweet(id).subscribe(
+      data => {
+        console.log('Tweet flagged');
+      }
+    );
+    this.router.navigate(['/profile']);
   }
 }

@@ -131,6 +131,12 @@ a:hover {
   text-align: left;
 }
 
+.offensive_btn {
+  color: #7a1915;
+  text-align: right;
+  font-weight: bolder;
+}
+
 .friends:hover {
   color: #10beff;
 }
