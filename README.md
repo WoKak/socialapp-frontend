@@ -12,16 +12,20 @@ separate application with neural network.
 * npm
 
 #### To run this app:
-1) Clone code
-2) Install npm
-3) ```npm install```
+1) Install node
+2) Clone code
+3) Install npm
+4) Install angular-cli
+5) ```npm install```
 
 then you can start application with:
 
 ```
-npm start
+npm run code
 ```
 
-##### Important note:
+##### Important notes:
 
-Source of the duck image: https://www.behance.net/gallery/42094811/Sticker-of-BDuck
+* To run this app you will also need certificate for https purposes, you can generate it via i.e. openssl
+
+* Source of the duck image: https://www.behance.net/gallery/42094811/Sticker-of-BDuck
