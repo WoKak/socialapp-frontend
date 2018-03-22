@@ -1,0 +1,151 @@
+body {
+  text-align: center;
+  color: #10beff;
+  font-family: "Comic Sans MS";
+}
+
+#lgn_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#lgn_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+#rgt_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#rgt_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+#twt_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#twt_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+#add_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#add_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+#sttg_btn {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+}
+
+#sttg_btn:hover {
+  border: 1px #10beff solid;
+  border-radius: 20px;
+  font-family: "Comic Sans MS";
+  color: #336699;
+}
+
+ul {
+  display: inline;
+  border: 5px #369 solid;
+  border-radius: 20px;
+  background-color: #10beff;
+}
+
+
+li {
+  display: inline;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Comic Sans MS";
+  font-size: larger;
+}
+
+a:hover {
+  color: #369;
+}
+
+#cntn_lnk {
+  color: #10beff;
+}
+
+#lgt_lgn_btn {
+  color: #10beff;
+}
+
+#lgt_lgn_btn:hover {
+  color: #369;
+}
+
+#rgt_lnk {
+  color: #10beff;
+}
+
+#rgt_lnk:hover {
+  color: #369;
+}
+
+.tweet {
+  border: solid 1px #369;
+  border-radius: 20px;
+  width: 300px;
+  height: 170px;
+  text-align: justify;
+  margin: 10px auto 10px auto;
+  padding: 5px;
+  font-family: monospace;
+  color: black;
+}
+
+.owner {
+  color: #369;
+  text-align: left;
+}
+
+.offensive_btn {
+  color: #7a1915;
+  text-align: right;
+  font-weight: bolder;
+}
+
+.friends:hover {
+  color: #10beff;
+}
+
+#new {
+  alignment: left;
+  border: none;
+}
+
+#banner:hover {
+  color: #369;
+}

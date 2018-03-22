@@ -1,0 +1,9 @@
+<form>
+  <input type="text" placeholder="username" [(ngModel)]="model.username" name="username"/>
+  <br/>
+  <input type="password" placeholder="password" [(ngModel)]="model.password" name="password"/>
+  <br/>
+  <input type="submit" value="login" id="lgn_btn" (click)="login()"/>
+</form>
+<br/>
+<a [routerLink] = "['/registration']" id="rgt_lnk">register</a>
