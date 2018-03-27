@@ -13,11 +13,11 @@ export class AuthenticationService {
   currentUser: string;
   token: string;
 
-  constructor(
-    private http: HttpClient,
-    private friendsService: FriendsService,
-    private tweetService: TweetService,
-    private settingsService: SettingsService) {}
+  constructor(private http: HttpClient,
+              private friendsService: FriendsService,
+              private tweetService: TweetService,
+              private settingsService: SettingsService) {
+  }
 
   login(username: string, password: string) {
 
@@ -30,12 +30,12 @@ export class AuthenticationService {
       {username: username, password: password},
       {headers: httpHeaders}
     ).map(
-        data => {
-          const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-          this.currentUser = response.username;
-          this.token = response.token;
-          return response.token;
-        }
+      data => {
+        const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
+        this.currentUser = response.username;
+        this.token = response.token;
+        return response.token;
+      }
     );
   }
 
@@ -66,9 +66,9 @@ export class AuthenticationService {
       {username: username, password: password},
       {headers: httpHeaders}
     ).map(
-        data => {
-          return username;
-        }
+      data => {
+        return username;
+      }
     );
   }
 

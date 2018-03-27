@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import {AuthenticationService} from "../services/authentication.service";
+import {Component} from '@angular/core';
+import {AuthenticationService} from "../services";
 
 
-@Component ({
+@Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './logout.component.html'
 })
-export class AppLogout  {
+export class AppLogout {
 
-  constructor (private authService: AuthenticationService) {
+  constructor(private authService: AuthenticationService) {
 
     this.authService.logout().subscribe(
       data => {

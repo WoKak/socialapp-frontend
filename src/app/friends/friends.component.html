@@ -1,9 +1,9 @@
 <ul id="lst">
-  <li><a [routerLink] = "['/main']">Main page</a></li>
-  <li><a [routerLink] = "['/profile']">My profile</a></li>
-  <li><a [routerLink] = "['/friends']">Friends</a></li>
+  <li><a [routerLink]="['/main']">Main page</a></li>
+  <li><a [routerLink]="['/profile']">My profile</a></li>
+  <li><a [routerLink]="['/friends']">Friends</a></li>
   <li><a>|</a></li>
-  <li (click)="logout()"><a [routerLink] = "['/logout']">Logout</a></li>
+  <li (click)="logout()"><a [routerLink]="['/logout']">Logout</a></li>
 </ul>
 <p>Yours friends:</p>
 <p *ngFor="let friend of friends" (click)="removeFriend(friend)" class="friends">{{friend}}</p>

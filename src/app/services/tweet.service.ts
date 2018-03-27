@@ -7,7 +7,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable()
 export class TweetService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   tweet(token: string, currentUser: string, tweet: string) {
 

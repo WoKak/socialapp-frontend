@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
-import {AuthenticationService} from "../services/authentication.service";
+import {Component} from '@angular/core';
+import {AuthenticationService} from "../services";
 import {Router} from "@angular/router";
 
-@Component ({
+@Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './friends.component.html'
 })
 
-export   class   AppFriends  {
+export class AppFriends {
 
   private model: any = {};
   public friends: any;
 
-  constructor(private authService: AuthenticationService, private router: Router) {this.fetchFriends();}
+  constructor(private authService: AuthenticationService, private router: Router) {
+    this.fetchFriends();
+  }
 
   addFriend() {
     this.authService.addFriend(this.model.new).subscribe(

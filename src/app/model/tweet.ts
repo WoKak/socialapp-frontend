@@ -1,3 +1,4 @@
 export class Tweet {
-  constructor (public tweet: string) {}
+  constructor(public tweet: string) {
+  }
 }

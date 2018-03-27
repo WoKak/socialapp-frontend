@@ -7,7 +7,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable()
 export class SettingsService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   fetchUsersSettings(token: string, currentUser: string) {
     let httpHeaders = new HttpHeaders()

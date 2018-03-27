@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import {AuthenticationService} from "../services/authentication.service";
+import {Component} from '@angular/core';
+import {AuthenticationService} from "../services";
 import {Router} from "@angular/router";
 
-@Component ({
+@Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './mainpage.component.html'
 })
-export   class   AppMainpage  {
+export class AppMainpage {
 
   public tweets: any;
 

@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthenticationService} from "../services/authentication.service";
+import {AuthenticationService} from "../services";
 
-@Component ({
+@Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './registration.component.html'
 })
 
-export   class   AppRegistration  {
+export class AppRegistration {
 
   model: any = {};
   token: string;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) {}
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
+  }
 
   register() {
 
