@@ -73,8 +73,7 @@ export class SpringService {
   }
 
   isAuthenticated() {
-    // return this.token.length != 0;
-    return true;
+    return this.token.length != 0;
   }
 
   fetchUsersSettings() {
