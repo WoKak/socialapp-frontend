@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthenticationService} from "../services";
+import {SpringService} from "../services";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,12 +11,12 @@ export class AppMainpage {
 
   public tweets: any;
 
-  constructor(private authService: AuthenticationService, private router: Router) {
+  constructor(private springService: SpringService, private router: Router) {
     this.fetch()
   }
 
   fetch() {
-    this.authService.fetchAllTweets().subscribe(
+    this.springService.fetchAllTweets().subscribe(
       data => {
         console.log('Tweets fetched');
         this.tweets = data;
@@ -25,7 +25,7 @@ export class AppMainpage {
   }
 
   flagTweet(id: any) {
-    this.authService.flagTweet(id).subscribe(
+    this.springService.flagTweet(id).subscribe(
       data => {
         console.log('Tweet flagged');
       }

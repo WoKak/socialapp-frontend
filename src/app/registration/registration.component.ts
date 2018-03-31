@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthenticationService} from "../services";
+import {SpringService} from "../services";
 
 @Component({
   moduleId: module.id,
@@ -13,16 +13,20 @@ export class AppRegistration {
   model: any = {};
   token: string;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) {
+  constructor(private router: Router, private springService: SpringService) {
   }
 
   register() {
 
-    this.authenticationService.register(this.model.username, this.model.password).subscribe(
+    this.springService.register(this.model.username, this.model.password).subscribe(
       data => {
         console.log("Registration successful");
         this.router.navigate(['/login']);
       }
     );
+  }
+
+  redirectLogin() {
+    this.router.navigate(['/login']);
   }
 }

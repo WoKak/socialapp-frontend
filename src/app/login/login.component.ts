@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../services';
+import {SpringService} from '../services';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 
@@ -15,12 +15,12 @@ export class AppLogin {
   model: any = {};
   token: string;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) {
+  constructor(private router: Router, private springService: SpringService) {
   }
 
   login() {
 
-    this.authenticationService.login(this.model.username, this.model.password).subscribe(
+    this.springService.login(this.model.username, this.model.password).subscribe(
       data => {
         this.token = data;
 
@@ -29,5 +29,9 @@ export class AppLogin {
         }
       }
     );
+  }
+
+  redirectRegister() {
+    this.router.navigate(['/registration']);
   }
 }

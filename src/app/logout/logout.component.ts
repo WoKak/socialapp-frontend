@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthenticationService} from "../services";
+import {SpringService} from "../services";
 
 
 @Component({
@@ -9,9 +9,9 @@ import {AuthenticationService} from "../services";
 })
 export class AppLogout {
 
-  constructor(private authService: AuthenticationService) {
+  constructor(private springService: SpringService) {
 
-    this.authService.logout().subscribe(
+    this.springService.logout().subscribe(
       data => {
         console.log("Logout successful");
       }

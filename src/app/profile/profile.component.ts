@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthenticationService} from "../services";
+import {SpringService} from "../services";
 import {Router} from "@angular/router";
 
 @Component({
@@ -14,8 +14,8 @@ export class AppProfile {
   public banner: any;
   model: any = {};
 
-  constructor(private authService: AuthenticationService, private router: Router) {
-    this.authService.fetchUsersSettings().subscribe(
+  constructor(private springService: SpringService, private router: Router) {
+    this.springService.fetchUsersSettings().subscribe(
       data => {
         if (data > 0) {
           this.banner = "You are not watching offensive tweets, click here to change it."
@@ -28,7 +28,7 @@ export class AppProfile {
   }
 
   tweet() {
-    this.authService.tweet(this.model.new).subscribe(
+    this.springService.tweet(this.model.new).subscribe(
       data => {
         console.log("Tweet has been added");
       }
@@ -37,7 +37,7 @@ export class AppProfile {
   }
 
   fetchMyTweets() {
-    this.authService.fetchAllUsersTweets().subscribe(
+    this.springService.fetchAllUsersTweets().subscribe(
       data => {
         console.log('Users tweets fetched');
         this.tweets = data;
@@ -46,7 +46,7 @@ export class AppProfile {
   }
 
   changeSettings() {
-    this.authService.changeSettings().subscribe(
+    this.springService.changeSettings().subscribe(
       data => {
         console.log("Settings changed");
         this.router.navigate(['/main']);

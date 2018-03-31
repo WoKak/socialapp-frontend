@@ -1,9 +1,22 @@
-<form>
-  <input type="text" placeholder="username" [(ngModel)]="model.username" name="username"/>
-  <br/>
-  <input type="password" placeholder="password" [(ngModel)]="model.password" name="password"/>
-  <br/>
-  <input type="submit" value="login" id="lgn_btn" (click)="login()"/>
-</form>
-<br/>
-<a [routerLink]="['/registration']" id="rgt_lnk">register</a>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <form>
+        <div class="form-group">
+          <label for="username">username:</label>
+          <input type="text" class="form-control" [(ngModel)]="model.username" id="username" name="username"/>
+        </div>
+        <div class="form-group">
+          <label for="password">password:</label>
+          <input type="password" class="form-control" [(ngModel)]="model.password" id="password" name="password"/>
+        </div>
+        <input class="btn btn-success" type="submit" value="login" (click)="login()">
+        <button type="button" class="btn btn-outline-success" (click)="redirectRegister()">register</button>
+      </form>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>

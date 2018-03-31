@@ -11,12 +11,12 @@ import {AppLogout} from "./logout";
 import {AppRegistration} from "./registration";
 import {AppLogin} from "./login";
 import {AppFriends} from "./friends";
-import {FriendsService, SettingsService, TweetService, AuthenticationService} from "./services";
+import {FriendsService, SettingsService, TweetService, SpringService} from "./services";
 
 @NgModule({
   imports: [BrowserModule, routing, FormsModule, HttpClientModule],
   declarations: [AppComponent, AppMainpage, AppProfile, AppLogin, AppLogout, AppRegistration, AppFriends],
-  providers: [AuthGuard, AuthenticationService, HttpClient, FriendsService, TweetService, SettingsService],
+  providers: [AuthGuard, SpringService, HttpClient, FriendsService, TweetService, SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

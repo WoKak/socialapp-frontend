@@ -1,13 +1,37 @@
-<ul id="lst">
-  <li><a [routerLink]="['/main']">Main page</a></li>
-  <li><a [routerLink]="['/profile']">My profile</a></li>
-  <li><a [routerLink]="['/friends']">Friends</a></li>
-  <li><a>|</a></li>
-  <li (click)="logout()"><a [routerLink]="['/logout']">Logout</a></li>
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <div class="alert alert-success" role="alert">
+      <a class="nav-link alert-link" [routerLink]="['/main']">Main page</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <div class="alert alert-success" role="alert">
+      <a class="nav-link alert-link" [routerLink]="['/profile']">My profile</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <div class="alert alert-success" role="alert">
+      <a class="nav-link alert-link" [routerLink]="['/friends']">Friends</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <div class="alert alert-success" role="alert">
+      <a class="nav-link alert-link" [routerLink]="['/logout']">Logout</a>
+    </div>
+  </li>
 </ul>
-<br/>
-<div class="tweet" *ngFor="let tweet of tweets">
-  <p class="offensive_btn" (click)="flagTweet(tweet.id)">x</p>
-  <p class="owner">{{tweet.owner}}:</p>
-  <p class="twt_txt">{{tweet.tweet}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <div class="border border-success" *ngFor="let tweet of tweets">
+        <p class="text-right text-danger" (click)="flagTweet(tweet.id)">x    </p>
+        <p class="text-left text-success">{{tweet.owner}}:</p>
+        <p>{{tweet.tweet}}</p>
+      </div>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
 </div>

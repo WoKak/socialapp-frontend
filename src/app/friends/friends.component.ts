@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthenticationService} from "../services";
+import {SpringService} from "../services";
 import {Router} from "@angular/router";
 
 @Component({
@@ -13,21 +13,21 @@ export class AppFriends {
   private model: any = {};
   public friends: any;
 
-  constructor(private authService: AuthenticationService, private router: Router) {
+  constructor(private springService: SpringService, private router: Router) {
     this.fetchFriends();
   }
 
   addFriend() {
-    this.authService.addFriend(this.model.new).subscribe(
+    this.springService.addFriend(this.model.new).subscribe(
       data => {
         console.log('Friend added')
       }
     );
-    this.router.navigate(['/main']);
+    this.router.navigate(['/profile']);
   }
 
   fetchFriends() {
-    this.authService.fetchFriends().subscribe(
+    this.springService.fetchFriends().subscribe(
       data => {
         console.log('Users friends fetched');
         this.friends = data;
@@ -36,7 +36,7 @@ export class AppFriends {
   }
 
   removeFriend(friend: any) {
-    this.authService.removeFriend(friend).subscribe(
+    this.springService.removeFriend(friend).subscribe(
       data => {
         console.log('Friend has been removed');
       }
