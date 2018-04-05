@@ -25,7 +25,7 @@
     <div class="col-sm">
     </div>
     <div class="col-sm">
-      <div class="border border-success" *ngFor="let tweet of tweets">
+      <div class="border border-success tweet" *ngFor="let tweet of tweets">
         <p class="text-right text-danger" (click)="flagTweet(tweet.id)">x    </p>
         <p class="text-left text-success">{{tweet.owner}}:</p>
         <p>{{tweet.tweet}}</p>

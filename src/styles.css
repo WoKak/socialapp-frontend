@@ -1,3 +1,14 @@
 body {
   font-family: "Verdana";
 }
+
+.tweet {
+  margin: 10px;
+  padding: 10px;
+}
+
+.friend {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}

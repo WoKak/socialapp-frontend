@@ -37,7 +37,7 @@
       </div>
       <br/>
       <p (click)="fetchMyTweets()" class="text-success">your tweets:</p>
-      <div class="border border-success" *ngFor="let tweet of tweets">
+      <div class="border border-success tweet" *ngFor="let tweet of tweets">
         <p class="text-left text-success">{{tweet.owner}}:</p>
         <p>{{tweet.tweet}}</p>
       </div>

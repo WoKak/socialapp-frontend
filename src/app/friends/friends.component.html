@@ -26,14 +26,17 @@
     </div>
     <div class="col-sm">
       <p>Yours friends:</p>
-      <div class="p-3 mb-2 bg-success text-white text-center" *ngFor="let friend of friends" (click)="removeFriend(friend)">
+      <div class="border border-success friend" *ngFor="let friend of friends" (click)="removeFriend(friend)">
         {{friend}}
       </div>
       <form>
         <div class="form-group">
-          <input type="text" placeholder="type new friend's name" [(ngModel)]="model.new" name="new" id="new"/>
+          <div class="form-group">
+            <label for="friend_name">New friend name:</label>
+            <input type="text" id="friend_name" class="form-control" [(ngModel)]="model.new" name="new" id="new"/>
+          </div>
         </div>
-        <input class="btn btn-outline-success" type="submit" value="add" (click)="addFriend()">
+        <input class="btn btn-success" type="submit" value="add" (click)="addFriend()">
       </form>
     </div>
     <div class="col-sm">
