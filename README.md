@@ -9,6 +9,7 @@ separate application with neural network.
 * Angular 4
 * HTML
 * CSS
+* Bootstrap
 * npm
 
 #### To run this app:
@@ -16,7 +17,6 @@ separate application with neural network.
 2) Clone code
 3) Install npm
 4) Install angular-cli
-5) ```npm install```
 
 then you can start application with:
 
