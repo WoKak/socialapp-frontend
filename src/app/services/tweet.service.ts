@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {r} from "@angular/core/src/render3";
 
 
 @Injectable()
@@ -24,7 +25,14 @@ export class TweetService {
       .map(
         data => {
           const response = JSON.parse(JSON.stringify(data['entity'], null, 4));
-          return response.owner;
+
+          let headers = new HttpHeaders()
+            .set('Access-Control-Allow-Origin', 'https://localhost:4200');
+
+          this.http.post('https://localhost:5000/api/new-posts', {posts: response}, {headers: headers})
+            .subscribe();
+
+          return response;
         }
       );
   }

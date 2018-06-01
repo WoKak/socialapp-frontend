@@ -5,11 +5,11 @@ separate application with neural network.
 
 #### Technology stack:
 
-* TypeScript 2.1.6
-* Angular 4
+* TypeScript 2.5.3
+* Angular 5
 * HTML
 * CSS
-* Bootstrap
+* Bootstrap 4
 * npm
 
 #### To run this app:
